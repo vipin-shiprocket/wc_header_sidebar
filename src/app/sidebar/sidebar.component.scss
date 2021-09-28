@@ -1,0 +1,40 @@
+mat-drawer{
+    background-color: #06064d;
+    padding: 0 2% 2% 1%;
+}
+mat-icon{
+    color:#6964e2;
+}
+h4{
+    font-size: 14px !important;
+   // color: white;
+}
+
+mat-list-item{
+    color: white;
+    margin-bottom: 10%;
+}
+
+.menu-item{
+    color: white;
+}
+
+.menu-item:hover{
+    color: #06064d;
+    background-color: white;
+    border-radius: 10px;
+}
+
+:host ::ng-deep .mat-list-item-content {
+     padding: 0 12px 0 12px!important;
+}
+
+.mat-list-item.active{
+    background-color: white;
+    border-radius: 10px;
+    color: #06064d;
+  }
+
+  .mat-drawer-inner-container{
+      overflow: hidden;
+  }

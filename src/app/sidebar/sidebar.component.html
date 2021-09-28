@@ -1,0 +1,35 @@
+<mat-drawer-container style="height: 100%;" class="example-container mat-typography" autosize>
+    <mat-drawer 	#sidenav
+          mode="side"
+          class="example-sidenav"
+          [ngStyle]="{ 'width.rem': sidenavWidth }"
+          opened="true"
+          (mouseenter)="increase()"
+          (mouseleave)="decrease()"  #drawer mode="side" disableClose="true" opened="true">
+      <mat-nav-list>
+        <mat-list-item>
+         <img *ngIf="sidenavWidth > 7" src="../../assets/icons/Group 15928.svg">
+         <img *ngIf="!(sidenavWidth > 7)" src="../../assets/icons/Group 16009.svg">
+        </mat-list-item>
+      </mat-nav-list>  
+      <mat-nav-list *ngIf="showMenu">
+        <mat-list-item class="menu-item" >
+          <img mat-list-icon src="../../assets/icons/Group 16015.svg">
+          <h4 mat-line *ngIf="sidenavWidth > 7">Home</h4>
+        </mat-list-item>
+        <mat-list-item class="menu-item">
+          <img mat-list-icon src="../../assets/icons/Group 16005.svg">
+          <h4 mat-line *ngIf="sidenavWidth > 7">Dashboard</h4>
+        </mat-list-item>
+        <mat-list-item class="menu-item">
+          <mat-icon mat-list-icon>domain</mat-icon>
+          <h4 mat-line *ngIf="sidenavWidth > 7">Orders</h4>
+        </mat-list-item>
+        <mat-list-item class="menu-item">
+          <mat-icon mat-list-icon>folder_shared</mat-icon>
+          <h4 mat-line *ngIf="sidenavWidth > 7">Return</h4>
+        </mat-list-item>
+      </mat-nav-list>
+    </mat-drawer>
+  </mat-drawer-container>
+

@@ -1,0 +1,1159 @@
+{
+    "welcome": {
+        "text": "Welcome",
+        "icon": "flaticon-home-1 sidebar-icon",
+        "sref": "app.welcome",
+        "url" : "/welcome"
+    },
+    "dashboard": {
+        "text": "Dashboard",
+        "icon": "flaticon-home sidebar-icon",
+        "sref": "app.dashboard",
+        "url" : "/dashboard"
+    },
+    "orders": {
+        "text": "Orders",
+        "icon": "flaticon-shopping-cart sidebar-icon",
+        "sref": "app.processing",
+        "url" : "/orders/processing",
+        "submenu": {
+            "add_order": {
+                "text": "Add Order",
+                "sref": "app.customorder",
+                "url" : "/addorder/"
+            },
+            "processing": {
+                "text": "Process Orders",
+                "sref": "app.processing",
+                "url" : "/orders/processing"
+            },
+            "generate_pickup": {
+                "text": "Generate Pickup",
+                "sref": "app.manifested",
+                "url" : "/orders/manifests"
+            },
+            "download_manifest": {
+                "text": "Download Manifest",
+                "sref": "app.manifests",
+                "url" : "/manifests"
+            },
+            "all_orders": {
+                "text": "All Orders",
+                "sref": "app.viewallorders",
+                "url" : "/orders/all"
+            },
+            "fbs_orders": {
+                "text": "SRF Orders",
+                "sref": "app.fbsorders",
+                "url" : "/orders/fbs-orders"
+            },
+            "quickship": {
+                "text": "Create Quick Shipment",
+                "sref": "app.quickShip",
+                "url" : "/quick-ship"
+            }
+        }
+    },
+    "tracking": {
+        "text": "Shipments",
+        "icon": "flaticon-fast sidebar-icon",
+        "sref": "app.tracking",
+        "url" : "/tracking",
+        "submenu": {
+            "track": {
+                "text": "Track",
+                "sref": "app.tracking",
+                "url" : "/tracking"
+            },
+            "process_ndr": {
+                "text": "Process NDR",
+                "sref": "app.ndrPending",
+                "url" : "/ndr-pending"
+            },
+            "rto": {
+                "text": "RTO",
+                "sref": "app.rtoInitiated",
+                "url" : "/rto-initiated"
+            }
+        }
+    },
+    "returns": {
+        "text": "Returns",
+        "icon": "flaticon-return-box sidebar-icon",
+        "sref": "app.returns",
+        "url" : "/orders/returns",
+        "submenu": {
+            "create_return": {
+                "text": "Add Return Order",
+                "sref": "app.createReturn",
+                "url" : "/create/returns/"
+            },
+            "track": {
+                "text": "All Return Order",
+                "sref": "app.returns",
+                "url" : "/orders/returns"
+            },
+            "refund": {
+                "text": "Refunds",
+                "sref": "app.refunds",
+                "url" : "/returns/refund"
+            }
+        }
+    },
+    "billing": {
+        "text": "Billing",
+        "icon": "flaticon-bill sidebar-icon",
+        "sref": "app.user_statement",
+        "url" : "/statement",
+        "submenu": {
+            "shipping_charges": {
+                "text": "Shipping Charges",
+                "sref": "app.user_statement",
+                "url" :"/statement"
+            },
+            "cod_remittance": {
+                "text": "COD Remittance",
+                "sref": "app.transaction_logs",
+                "url" : "/remittance-logs"
+            },
+            "passbook":{
+                "text": "Passbook",
+                "sref": "app.passbook",
+                "url" :"/passbook"
+            },
+            "all_recharges": {
+                "text": "All Recharges",
+                "sref": "app.user_creditdetails",
+                "url" : "/billing-credit-details"
+            },
+            "invoices": {
+                "text": "Invoices",
+                "sref": "app.user_invoicing_new",
+                "url" : "/invoice-new"
+            },
+            "sr_credit": {
+                "text": "Shiprocket Credit",
+                "sref": "app.srCredit",
+                "url" : "/sr-capital/credit"
+            },
+            "credit_receipts": {
+                "text": "Credit Receipts",
+                "sref": "app.sellercreditnote",
+                "url" : "/seller/creditnote"
+            }
+        }
+    },
+    "weight":{
+        "text":"Weight Panel",
+        "icon": "fa fa-balance-scale sidebar-icon",
+        "sref": "app.user_chargedetail",
+        "url" : "/billing-charge-details",
+        "submenu": {
+            "weight_discrepency": {
+                "text": "Weight Discrepancy",
+                "sref": "app.user_chargedetail",
+                "url" : "/billing-charge-details"
+            },
+            "on_hold": {
+                "text": "On Hold Balance",
+                "sref": "app.onhold_reconcile",
+                "url" : "/onhold-reconcilation"
+            },
+            "request_weight_freeze": {
+                "text": "Weight Freeze",
+                "sref": "app.request_weight_freeze",
+                "url" : "/request-weight-freeze"
+            },
+            "package_master": {
+                "text": "Packaging",
+                "sref": "app.packaginglist",
+                "url" : "/packaginglist"
+            }
+        }
+    },
+    "settings": {
+        "text": "Settings",
+        "icon": "flaticon-gear sidebar-icon",
+        "sref": "app.newSettings",
+        "url" : "/settings"
+    },
+    "fbs": {
+        "text": "SRF",
+        "icon": "flaticon-truck-1 sidebar-icon",
+        "sref": "app.fbsorders",
+        "url" : "/orders/fbs-orders",
+        "submenu": {
+            "barcode_generator": {
+                "text": "Barcode Generator",
+                "sref": "app.barcode-generator",
+                "url" : "/barcode-generator"
+            },
+            "asn" : {
+                "text" : "ASN",
+                "sref" : "app.asn-listing",
+                "url" : "/asn-listing"
+            },
+            "fbs_orders": {
+                "text": "Orders",
+                "sref": "app.fbsorders",
+                "url" : "/orders/fbs-orders"
+            },
+            "fbs_inventory": {
+                "text": "Inventory",
+                "sref": "app.warehouse-inventory",
+                "url" : "/warehouse-inventory"
+            },
+            "panel_link": {
+                "text": "New Panel (Beta)",
+                "sref": "app.fbs-new-panel-link",
+                "url" : "/srf-new-panel"
+            },
+            "easy_ecom_redirect": {
+                "text": "Marketplace",
+                "sref": "app.easy-ecom-redirect",
+                "url" : "/srf-marketplace"
+            }
+        }
+    },
+    "customers": {
+        "text": "Customers",
+        "icon": "flaticon-group",
+        "sref": "app.customerSearch",
+        "url" : "/customer_search",
+        "submenu": {
+            "add_customer": {
+                "text": "Add Customer",
+                "sref": "app.addCustomer",
+                "url" : "/add_customer"
+            },
+             "customers_search": {
+                "text": "All Customers",
+                "sref": "app.customerSearch",
+                "url" : "/customer_search"
+            }
+        }
+    },
+    "fullfillment": {
+        "text": "Fullfillment",
+        "icon": "icon-list sidebar-icon",
+        "sref": "app.icrminventory",
+        "url" : "/icrm-inventory",
+        "submenu": {
+            "asn_grn_list": {
+                "text": "ASN/GRN",
+                "icon": "fa fa-file-text-o",
+                "sref": "app.asngrnlist",
+                "url" : "/asn-grn-report"
+            },
+            "icrm_inventory": {
+                "text": "ICRM Inventory",
+                "icon": "fa fa-file-text-o",
+                "sref": "app.icrminventory",
+                "url" : "/icrm-inventory"
+            },
+            "seller_activation": {
+                "text": "Seller Activation",
+                "icon": "fa fa-file-text-o",
+                "sref": "app.sellerActivation",
+                "url" : "/seller-activation"
+            },
+            "srf_discounting": {
+                "text": "Seller Discount",
+                "icon": "fa fa-file-text-o",
+                "sref": "app.sellerdiscount",
+                "url" : "/seller-discount"
+            },
+            "vas_service": {
+                "text": "Value Added Service",
+                "icon": "fa fa-file-text-o",
+                "sref": "app.valueAddedService",
+                "url" : "/vasList"
+            }
+        }
+    },
+    "reports": {
+        "text": "Reports",
+        "icon": "icon-list sidebar-icon",
+        "sref": "app.codReconcile",
+        "url" : "/cod-reconcile",
+        "submenu": {
+            "order_report": {
+                "text": "Order Report",
+                "icon": "fa fa-cart-arrow-down sidebar-icon",
+                "sref": "app.ordereport",
+                "url" : "/order-report"
+            },
+            "cod_reconcile_report": {
+                "text": "COD Reconcile Report",
+                "icon": "fa fa-money sidebar-icon",
+                "sref": "app.codReconcile",
+                "url" : "/cod-reconcile"
+            },
+            "billing_report": {
+                "text": "Billing Report",
+                "icon": "fa fa-file-text-o sidebar-icon",
+                "sref": "app.billingReport",
+                "url" : "/billing-report"
+            },
+            "awb_status_report": {
+                "text": "AWB Status Report",
+                "icon": "fa fa-info-circle sidebar-icon",
+                "sref": "app.aws_status",
+                "url" : "/aws-report"
+            },
+            "company_master": {
+                "text": "Company Master",
+                "icon": "fa fa-building sidebar-icon",
+                "sref": "app.company_Master",
+                "url" : "/company-master"
+            },
+            "weight_dispute_report": {
+                "text": "Weight Dispute Report",
+                "icon": "fa fa-balance-scale sidebar-icon",
+                "sref": "app.weightDisputeReport",
+                "url" : "/weightDisputeReport"
+            },
+            "seller_report": {
+                "text": "Seller Data Report",
+                "icon": "fa fa-list sidebar-icon",
+                "sref": "app.sellerDataReport",
+                "url" : "/sellerDataReport"
+            },
+            "delhivery_warehouse_report": {
+                "text": "Delhivery Warehouse Report",
+                "icon": "fa fa-list sidebar-icon",
+                "sref": "app.delhiveryWarehouseReport",
+                "url" : "/delhivery-warehouse-report"
+            },
+            "zone_serviceability": {
+                "text": "Pincode Zone Serviceability",
+                "icon": "fa fa-list sidebar-icon",
+                "sref": "app.zoneServiceability",
+                "url" : "/pickup-zone-serviceability"
+            },
+            "refund_freight_report": {
+                "text": "Refund Freight Sheet",
+                "icon": "fa fa-list sidebar-icon",
+                "sref": "app.refundFreightSheet",
+                "url" : "/refundFreightSheet"
+            },
+            "pincode_serviceability": {
+                "text": "Pincode Serviceability",
+                "icon": "fa fa-list sidebar-icon",
+                "sref": "app.pincodeServiceability",
+                "url" : "/pincode_serviceability"
+            },
+            "awb_order_report": {
+                "text": "AWB Order Report",
+                "icon": "fa fa-file-text-o",
+                "sref": "app.awb_order_report",
+                "url" : "/awb_order_report"
+            },            
+            "awb_billing_report": {
+                "text": "Seller Awb Billing Report",
+                "icon": "fa fa-list",
+                "sref": "app.awb_billing_report",
+                "url" : "/awb_billing_report"
+            },
+            "awb_freight_calculation_report": {
+                "text": "AWB Freight Calculation Report",
+                "icon": "fa fa-file-text-o",
+                "sref": "app.awb_freight_calculation_report",
+                "url" : "/awb_freight_calculation_report"
+            },
+            "shipment": {
+                "text": "Shipment Report",
+                "icon": "fa fa-list",
+                "sref": "app.shipment",
+                "url" : "/shipment"
+            },
+            "churn_capture_report": {
+                "text": "Churn Report",
+                "icon": "fa fa-list",
+                "sref": "app.churnratereport",
+                "url" : "/churn-rate-report"
+            },
+            "courieretd": {
+                "text": "Courier ETD Report",
+                "icon": "fa fa-list",
+                "sref": "app.courieretd",
+                "url" : "/courier-etd-report"
+            },
+            "awb_cancel": {
+                "text": "AWB Cancel",
+                "icon": "fa fa-file-text-o",
+                "sref": "app.awb_cancel",
+                "url" : "/awb_cancel"
+            },
+            "pid_order_report": {
+                "text": "Pid Order Report",
+                "icon": "fa fa-file-text-o",
+                "sref": "app.pid_order_report",
+                "url" : "/pid-order-report"
+            },
+            "freight_report": {
+                "text": "Freight Report",
+                "icon": "fa fa-file-text-o",
+                "sref": "app.freight_report",
+                "url" : "/freight-report"
+            },
+            "refund_tagging": {
+                "text": "Refund Tagging",
+                "icon": "fa fa-file-text-o",
+                "sref": "app.refund_tagging",
+                "url" : "/refund-tagging"
+            },
+            "monthly_shipment_target": {
+                "text": "Seller Monthly Target",
+                "icon": "fa fa-file-text-o",
+                "sref": "app.sellerMonthlyTarget",
+                "url" : "/seller-monthly-target"
+            },
+            "upload_mps": {
+                "text": "Upload MPS Seller",
+                "icon": "fa fa-file-text-o",
+                "sref": "app.upload_mps",
+                "url" : "/upload_mps"
+            }
+        }
+    },
+    "cod_panel": {
+        "text": "COD Panel",
+        "icon": "fa fa-money sidebar-icon",
+        "sref": "app.codPanel",
+        "url" : "/COD-Panel",
+        "submenu": {
+            "cod_panel": {
+                "text": "COD Panel",
+                "icon": "fa fa-money sidebar-icon",
+                "sref": "app.codPanel",
+                "url" : "/COD-Panel"
+            }
+        }
+    },
+    "sow_panel": {
+        "text": "SOW Panel",
+        "icon": "fa fa-universal-access sidebar-icon",
+        "sref": "app.sowPanel",
+        "url" : "/icrm/SOW-Panel"
+    },
+    "upload-awbs": {
+        "text": "Upload Awbs",
+        "icon": "fa fa-dropbox sidebar-icon",
+        "sref": "app.uploadAwbs",
+        "url" : "/icrm/upload-awbs"
+    },
+    "accounts": {
+        "text": "Accounts",
+        "icon": "icon-list",
+        "sref": "app.addCreditNote",
+        "url" : "/addCreditNote",
+        "submenu": {
+            "add_credit_note": {
+                "text": "Add Credit Note",
+                "icon": "icon-list",
+                "sref": "app.addCreditNote",
+                "url" : "/addCreditNote"
+            }
+        }
+    },
+    "ndr": {
+        "text": "NDR",
+        "icon": "flaticon-truck-4 sidebar-icon",
+        "sref": "app.ndrPanelClosed",
+        "url" : "/ndrpanel-closed",
+        "submenu": {
+            "ndr_panel": {
+                "text": "NDR",
+                "icon": "fa fa-clock-o",
+                "sref": "app.ndrPanelClosed",
+                "url" : "/ndrpanel-closed"
+            },
+            "call_center": {
+                "text": "CALL CENTRE",
+                "icon": "fa fa-list",
+                "sref": "app.ndr_call_centre",
+                "url" : "/ndr_call_centre"
+            },
+            "ndr_escalation": {
+                "text": "NDR Escalation",
+                "icon": "fa fa-truck",
+                "sref": "app.ndrescalation",
+                "url" : "/ndrescalation"
+            },
+             "callcenter_priority": {
+                "text": "Call Center Priority",
+                "icon": "fa fa-list",
+                "sref": "app.callCenterPriority",
+                "url" : "/call_center_priority"
+            },
+            "ndr_kam": {
+                "text": "NDR KAM",
+                "icon": "fa fa-list",
+                "sref": "app.ndrkam",
+                "url" : "/ndrkam"
+            },
+            "hub_address": {
+                "text": "Hub Address",
+                "icon": "fa fa-list",
+                "sref": "app.hub_address",
+                "url" : "/hub_address"
+            }
+        }
+    },
+    "rating": {
+        "text": "Rating",
+        "icon": "fa fa-clock-o sidebar-icon",
+        "sref": "app.courierRatingReport",
+        "url" : "/rating-report"
+    },
+    "company": {
+        "text": "Edit Info",
+        "icon": "icon-home sidebar-icon",
+        "sref": "app.editCompanyDetails",
+        "url" : "/edit-company-details",
+        "submenu": {
+            "manage": {
+                "text": "Manage",
+                "icon": "fa fa-list sidebar-icon",
+                "sref": "app.editCompanyDetails",
+                "url" : "/edit-company-details"
+            },
+            "shipping_limit": {
+                "text": "Set Shipping limit",
+                "icon": "fa fa-list sidebar-icon",
+                "sref": "app.shippingLimit",
+                "url" : "/shipping-limit"
+            }
+        }
+    },
+    "international_couriers": {
+        "text": "Activate Courier",
+        "icon": "flaticon-global sidebar-icon",
+        "sref": "app.international_activate_couriers",
+        "url" : "/international-activate-couriers"
+    },
+    "savex_billing": {
+        "text": "Savex Billing",
+        "icon": "fa fa-file-text-o sidebar-icon",
+        "sref": "app.savex_billing",
+        "url" : "/savex_billing"
+    },
+    "weight_dispute": {
+        "text": "WD",
+        "icon": "fa fa-balance-scale sidebar-icon",
+        "sref": "app.wdImage",
+        "url" : "/wd-images",
+        "submenu": {
+            "wd_image_upload": {
+                "text": "WD Image Upload",
+                "icon": "fa fa-cloud-upload sidebar-icon",
+                "sref": "app.wdImage",
+                "url" : "/wd-images"
+            },
+            "wd_mis_upload": {
+                "text": "MIS Upload",
+                "icon": "fa fa-file-excel-o sidebar-icon",
+                "sref": "app.wdMis",
+                "url" : "/wd-mis"
+            },
+            "wd_resolve_sheet": {
+                "text": "WD Resolved Sheet",
+                "icon": "fa fa-file-excel-o sidebar-icon",
+                "sref": "app.wdResolvedSheet",
+                "url" : "/wd-resolved-sheet"
+            },
+            "pincode_upload": {
+                "text": "Pincode Upload",
+                "icon": "fa fa-file-excel-o sidebar-icon",
+                "sref": "app.pincodeUpload",
+                "url" : "/pincodeUpload"
+            },
+            "price_upload": {
+                "text": "Price Upload",
+                "icon": "fa fa-file-excel-o sidebar-icon",
+                "sref": "app.priceUpload",
+                "url" : "/priceUpload"
+            },
+            "weight_slab": {
+                "text": "Weight Slab",
+                "icon": "fa fa-balance-scale sidebar-icon",
+                "sref": "app.weightSlab",
+                "url" : "/admin/wd-slab"
+            },
+            "wd_category": {
+                "text": "Category",
+                "icon": "fa fa-list-alt",
+                "sref": "app.wdCategory",
+                "url" : "/wd-category?page&perPage"
+            },
+            "weight_upload": {
+                "text": "Charged Weight upload",
+                "icon": "fa fa-file-excel-o",
+                "sref": "app.weightUpload",
+                "url" : "/wd/pre_weightUPload"
+            },
+            "weight_freez": {
+                "text": "Weight Freeze",
+                "icon": "fa fa-chain-broken",
+                "sref": "app.weightFreez",
+                "url" : "/admin/wd-freez"
+            },
+            "weight_freeze_awbs":{
+                "text": "Weight Freeze Awbs",
+                "icon": "fa fa-book",
+                "sref":"app.weightFreezeAwbs",
+                "url" : "/admin/wd-freez"
+            },
+			"verfiy-package": {
+                "text": "Verfiy Package",
+                "icon": "fa fa-upload",
+                "sref": "app.verfiyPackage",
+                "url" : "/verfiy-package"
+			},
+            "courier_weight":{
+                "text": "Courier Weight",
+                "icon": "fa fa-balance-scale",
+                "sref":"app.courierWeight",
+                "url" : "/wd/courier_weight"
+            },
+            "pre_weight":{
+                "text": "Pre-Weignt File Upload",
+                "icon": "fa fa-balance-scale",
+                "sref":"app.preWeignt",
+                "url" : "/wd/pre_weightUPload"
+            },
+            "courier_image": {
+                "text": "Courier Image Upload",
+                "icon": "fa fa-cloud-upload sidebar-icon",
+                "sref": "app.courierImage",
+                "url" : "/courier-images"
+            }
+        }
+    },
+    "dwh": {
+        "text": "DWH",
+        "icon": "fa fa-database  sidebar-icon",
+        "sref": "app.freightAmount",
+        "url" : "/freight-amount",
+        "submenu": {
+            "manual_freight": {
+                "text": "Freight Amount",
+                "icon": "icon-list sidebar-icon",
+                "sref": "app.freightAmount",
+                "url" : "/freight-amount"
+            }
+        }
+    },
+    "verifications": {
+        "text": "Verifications",
+        "icon": "icon-home sidebar-icon",
+        "sref": "app.kycAdmin",
+        "url" : "/kyc-admin",
+        "submenu": {
+            "kyc": {
+                "text": "KYC",
+                "icon": "fa fa-list sidebar-icon",
+                "sref": "app.kycAdmin",
+                "url" : "/kyc-admin"
+            },
+            "bank": {
+                "text": "Bank details",
+                "icon": "fa fa-list sidebar-icon",
+                "sref": "app.bankVerification",
+                "url" : "/bank-verification"
+            },
+            "courier_approval": {
+                "text": "Courier Approval",
+                "icon": "fa fa-list sidebar-icon",
+                "sref": "app.courierApproval",
+                "url" : "/courier-approval"
+            },
+            "verify_mps": {
+                "text": "MPS Approval",
+                "icon": "fa fa-list sidebar-icon",
+                "sref": "app.verify_mps",
+                "url" : "/verify_mps"
+            }
+        }
+    },
+    "kyc": {
+        "text": "KYC",
+        "icon": "flaticon-fingerprint-currently-scanning sidebar-icon kyc-status-icon",
+        "sref": "app.userNewKyc",
+        "url" : "/new-kyc"
+    },
+    "automated_billing": {
+        "text": "Billing",
+        "icon": "fa fa-file-text-o sidebar-icon",
+        "sref": "app.billingAutomation",
+        "url" : "/admin/auto-billing"
+    },
+    "help": {
+        "text": "Support",
+        "icon": "flaticon-call-center sidebar-icon",
+        "sref": "app.help",
+        "url" : "/help",
+        "submenu": {
+            "create_and_view_tickets": {
+                "text": "Help & Support",
+                "sref": "app.supportWeb"
+            },
+            "view_all_tickets": {
+                "text": "View Tickets",
+                "sref": "app.viewAllTickets",
+                "url" : "/view_all_tickets"
+            },
+            "support": {
+                "text": "FAQ",
+                "sref": "app.help",
+                "url" : "/help"
+            },
+            "schedule": {
+                "text": "Training",
+                "sref": "app.viewTickets",
+                "url" : "/scheduletraining"
+            }
+        }
+    },
+    "admin_fraud_shipment": {
+        "text": "Fraud/ Snatching",
+        "icon": "fa fa-dropbox sidebar-icon",
+        "sref": "app.fraudShipmentListing",
+        "url" : "/internal/shipments/fraud"
+    },
+    "first_mile_aggregeator": {
+        "text": "First Mile Aggregator",
+        "icon": "fa fa-users sidebar-icon",
+        "sref": "app.pickupListing",
+        "url" : "/internal/pickups",
+        "submenu": {
+            "f_m_shipment": {
+                "text": "Pickup Details",
+                "icon": "fa fa-truck sidebar-icon",
+                "sref": "app.pickupListing",
+                "url" : "/internal/pickups"
+            },
+            "f_m_upload_awb": {
+               "text": "AWB Uploader",
+                "icon": "fa fa-file-excel-o sidebar-icon",
+                "sref": "app.wdAwbMis",
+                "url" : "/wd-awb-mis"
+            }
+        }
+    },
+    "internal_crm": {
+        "text": "Internal CRM",
+        "icon": "flaticon-customer-relationship-management sidebar-icon",
+        "sref": "app.shipmentListing",
+        "url" : "/internal/shipments",
+        "submenu": {
+            "admin_shipment": {
+                "text": "Shipment Details",
+                "icon": "fa fa-truck sidebar-icon",
+                "sref": "app.shipmentListing",
+                "params": {
+                    "firstCall": "1"
+                },
+                "url" : "/internal/shipments/fraud"
+            },
+            "admin_seller": {
+                "text": "Seller Info",
+                "icon": "fa fa-users sidebar-icon",
+                "sref": "app.sellerListing",
+                "url" : "/internal/sellers"
+            },
+            "mainfest_escalation": {
+                "text": "Manifest Escalation",
+                "icon": "fa fa-truck",
+                "sref": "app.manifestescalation",
+                "url" : "/manifest"
+            },
+            "training_panel": {
+                "text": "Training Panel",
+                "icon": "fa fa-users",
+                "sref": "app.trainingList",
+                "url" : "/training-detail"
+            }
+            ,
+            "freight_refund": {
+                "text": "Freight Refund",
+                "icon": "fa fa-money",
+                "sref": "app.freightRefund",
+                "url" : "/internal/freight_refund"
+            },
+
+            "dg_goods": {
+                "text": "DG Goods",
+                "icon": "fa fa-money",
+                "sref": "app.dggoods",
+                "url" : "/internal/dg_goods"
+            },
+
+            "weight-score": {
+                "text": "Seller weight score",
+                "icon": "fa fa-money",
+                "sref": "app.sellerWeight",
+                "url" : "/internal/sellerWeight"
+            },
+            "on_boarding": {
+                "text": "Onboarding",
+                "icon": "fa fa-money",
+                "sref": "app.onboarding",
+                "url" : "/internal/onboarding"
+            },
+            "seller-report": {
+                "text": "Seller Report",
+                "icon": "fa fa-file-text-o",
+                "sref": "app.sellerReport",
+                "url" : "/internal/sellerReport"
+            },
+            "seller_product": {
+                "text": "Seller Products",
+                "icon": "fa fa-file-text-o",
+                "sref": "app.productListing",
+                "url" : "/internal/seller_products"
+            },
+            "pickup_address": {
+                "text": "Pickup Addresses",
+                "icon": "fa fa-file-text-o",
+                "sref": "app.pickup_address",
+                "url" : "/pickup-address"
+            }, 
+            "add_pickup_address": {
+                "text": "Add Pickup Address",
+                "icon": "fa fa-file-text-o",
+                "sref": "app.add_pickup_address",
+                "url" : "/pickup-address"
+            },
+            "otp_based_delivery": {
+                "text": "OTP Based Delivery",
+                "icon": "fa fa-file-text-o",
+                "sref": "app.otpBasedDelivery",
+                "url" : "/otpBasedDelivery"
+            }      	     
+        }
+    },
+    "support_tickets": {
+        "text": "Support Tickets",
+        "icon": "fa fa-file-text-o",
+        "sref": "app.support_tickets",
+        "url"   : "/support_tickets"
+    },
+    "support_icrm": {
+        "text": "Create & View Tickets",
+        "icon": "flaticon-call-center sidebar-icon",
+        "sref": "app.supportICRM"
+    },
+    "internal_invoice" : {
+        "text" : "Freight Invoicing",
+        "icon" : "fa flaticon-payment",
+        "sref" : "app.internalCrmInvoice",
+        "url" : "/internal-crm-invoice",
+        "submenu": {
+            "invoice": {
+                "text": "Invoice Wise View",
+                "icon": "fa flaticon-payment sidebar-icon",
+                "sref": "app.internalCrmInvoice",
+                "url" : "/internal-crm-invoice"
+            },
+            "seller": {
+                "text": "Seller Wise View",
+                "icon": "fa flaticon-group sidebar-icon",
+                "sref": "app.internalCrmSeller",
+                "url" : "/internal-crm-seller"
+            }        
+        }
+    },
+    "remittance": {
+        "text": "Remittance V3",
+        "icon": "icon-handbag sidebar-icon",
+        "sref": "app.remittanceUpload",
+        "url" : "/remittance_upload",
+        "submenu": {
+            "upload_remittance": {
+                "text": "Upload Post Remittance",
+                "icon": "fa fa-upload sidebar-icon",
+                "sref": "app.remittanceUpload",
+                "url" : "/remittance_upload"
+            },
+            "upload_courier_file": {
+                "text": "Upload Courier Files",
+                "icon": "fa fa-upload sidebar-icon",
+                "sref": "app.codRemittance",
+                "url" : "/cod_remittance"
+            },
+            "view_remittance_history": {
+                "text": "AWB Remittance Details",
+                "icon": "fa fa-history sidebar-icon",
+                "sref": "app.remittanceHistoryView",
+                "url" : "/remittance-history"
+            },
+            "upload_lost_awb": {
+                "text": "Upload Lost AWB",
+                "icon": "fa fa-upload sidebar-icon",
+                "sref": "app.uploadLostAwb",
+                "url" : "/remittance-history"
+            },
+            "cod_remittance_plan_settings": {
+                "text": "Upload Early COD",
+                "icon": "fa fa-upload sidebar-icon",
+                "sref": "app.earlycod",
+                "url" : "/early-cod"
+            },
+            "add_credits": {
+                "text": "Add Credits",
+                "icon": "fa fa-money sidebar-icon",
+                "sref": "app.addCredits",
+                "url" : "/Add-Credits"
+            },
+            "bulk_smart_plan_update": {
+                "text": "Smart Plan Activation",
+                "icon": "fa fa-upload sidebar-icon",
+                "sref": "app.smartPlanAcivation",
+                "url": "/smart-plan-activation"
+            }
+            
+        }
+    },
+    "post_order": {
+        "text": "Post Ship",
+        "icon": "flaticon-maps-and-location sidebar-icon",
+        "sref": "app.landing_postship",
+        "url" : "/landing_postship"
+    },
+    "channels": {
+        "text": "Channels",
+        "icon": "flaticon-stacked-layers sidebar-icon",
+        "sref": "app.channel",
+        "url" : "/channels",
+        "submenu": {
+            "all_channels": {
+                "text": "All Channels",
+                "sref": "app.channel",
+                "url" : "/channels"
+            },
+            "channel_products": {
+                "text": "Channel Products",
+                "sref": "app.listings",
+                "url" : "/listings/unmapped"
+            },
+            "manage_inventory": {
+                "text": "Manage Inventory",
+                "sref": "app.inventory",
+                "url" : "/inventory"
+            },
+            "all_products": {
+                "text": "All Products",
+                "sref": "app.products",
+                "url" : "/products/"
+            },
+            "manage_catalog": {
+                "text": "Manage Catalog",
+                "sref": "app.inventorytoggle",
+                "url" : "/manage-catalog-settings"
+            },
+            "category": {
+                "text": "Categories",
+                "sref": "app.categories",
+                "url" : "/categories"
+            },
+            "tax_classes": {
+                "text": "Tax Classes",
+                "sref": "app.taxclasses",
+                "url" : "/taxclasses"
+            }
+        }
+    },
+    "pincode_panel": {
+        "text": "Pincode Panel",
+        "icon": "fa fa-map-marker",
+        "sref": "app.pincode_summary",
+        "url" : "/pincode_summary",
+        "submenu": {
+            "pincode_summary": {
+                "text": "Pincodes Summary",
+                "icon": "fa fa-list",
+                "sref": "app.pincode_summary",
+                "url" : "/pincode_summary"
+            },
+            "pincode_update_panel": {
+                "text": " Pincode Update Panel",
+                "icon": "fa fa-list",
+                "sref": "app.pincode_panel",
+                "url" : "/pincode_panel"
+            }
+        }
+    },
+    "tools": {
+        "text": "Tools",
+        "icon": "flaticon-wrench sidebar-icon",
+        "sref": "app.rateCalculator",
+        "url" : "/rate-calculatorabc",
+        "submenu": {
+            "calculator": {
+                "text": "Rate Calculator",
+                "sref": "app.rateCalculator",
+                "url" : "/rate-calculatorabc"
+            },
+            "pincode_mapping": {
+                "text": "Pincode-Zone Mapping",
+                "sref": "app.rateCalculator_mapping",
+                "url" : "/rate-calculator"
+            },
+            "activity": {
+                "text": "Activity Logs",
+                "sref": "app.activities",
+                "url" : "/activities"
+            },
+            "reports": {
+                "text": "Reports",
+                "sref": "app.reports",
+                "url" : "/reports"
+            },
+            "bulk_actions": {
+                "text": "Bulk Print Actions",
+                "sref": "app.bulkaction",
+                "url" : "/bulk_actions"
+            }
+        }
+    },
+        "zone_rates": {
+        "text": "Zone Rate Panel",
+        "icon": "flaticon-group",
+        "sref": "app.zoneRatesSummary",
+        "url" : "/zone-rates-summary",
+        "submenu": {
+            "zone_rate_summary": {
+                "text": "Zone Rate Summary",
+                "icon": "flaticon-user sidebar-icon",
+                "sref": "app.zoneRatesSummary",
+                "url" : "/zone-rates-summary"
+            },
+             "zone_rate_upload_panel": {
+                "text": "Zone Rate Upload Panel",
+                "icon": "flaticon-group sidebar-icon",
+                "sref": "app.uploadZoneRates",
+                "url" : "/upload-zone-rates"
+             },
+             "zone_rate_logs": {
+                "text": "Zone Rate Logs",
+                "icon": "flaticon-group sidebar-icon",
+                "sref": "app.zoneRatesLogs",
+                "url" : "/zone-rates-logs"
+             }
+
+        }
+    },
+    "api": {
+        "text": "API",
+        "icon": "flaticon-coding sidebar-icon",
+        "sref": "app.apiUser",
+        "url" : "/api-user"
+    },
+    "coupons": {
+        "text": "Coupons",
+        "icon": "fa fa-tag",
+        "sref": "app.couponsList",
+        "url" : "/coupon/list",
+        "submenu": {
+            "coupon_list": {
+                "text": "coupon list",
+                "icon": "fa fa-cog",
+                "sref": "app.couponsList",
+                "url" : "/coupon/list"
+            },
+            "coupon_create": {
+                "text": "coupon create",
+                "icon": "fa fa-link",
+                "sref": "app.coupons",
+                "url" : "/coupon/create"
+            },
+            "marketing_spends": {
+                "text": "upload marketing spends",
+                "icon": "fa fa-upload",
+                "sref": "app.upload_marketing_spends",
+                "url" : "/coupon/upload_marketing_spends"
+            }
+        }
+    },
+
+    "sales": {
+        "text": "Sales",
+        "icon": "flaticon-stacked-layers sidebar-icon",
+        "sref": "app.sales",
+        "url" : "/sales"
+    },
+    "credit_note": {
+        "text": "Credit Note",
+        "icon": "flaticon-receipt sidebar-icon",
+        "sref": "app.admincreditnote",
+        "url" : "/admin/creditnote",
+        "submenu": {
+            "credit_note_against_refunds": {
+                "text": "Credit Note Against Refunds",
+                "icon": "fa fa-list-alt sidebar-icon",
+                "sref": "app.admincreditnote",
+                "url" : "/admin/creditnote"
+            },
+            "credit_note_against_invoices": {
+                "text": "Credit Note Against Invoices",
+                "icon": "fa fa-file-text-o sidebar-icon",
+                "sref": "app.internalCrmCreditNote",
+                "url" : "/icrm-credit-note"
+            }
+        }
+    },
+    "escalation" : {
+        "text": "Escalation",
+        "icon": "fa fa-tag",
+        "sref": "app.expedite_escalation",
+        "url" : "/expedite-escalation",
+        "submenu": {
+            "expedite_escalation": {
+                "text": "Expedite Escalation",
+                "icon": "fa fa-cog",
+                "sref": "app.expedite_escalation",
+                "url" : "/expedite-escalation"
+            },
+            "upload-pod": {
+                "text": "Upload Pod Report",
+                "icon": "fa fa-upload",
+                "sref": "app.uploadPod",
+                "url" : "/upload-pod"
+            },
+            "pod-dispute": {
+                "text": "Pod Dispute",
+                "icon": "fa fa-gavel",
+                "sref": "app.podDispute",
+                "url" : "/pod-dispute"
+            }
+        }                
+    },
+
+    "legal_dept" : {
+        "text" : "Terms & Conditions",
+        "icon" : "fa fa-legal",
+        "sref" : "app.agreements",
+        "url" : "/agreements"
+    },
+
+    "companyparent" : {
+        "text" : "Add Company Parent",
+        "icon" : "fa fa-dropbox",
+        "sref" : "app.companyparent",
+        "url" : "/companyparent"
+    },
+    "courier_overwrite" : {
+        "text" : "Black Box",
+        "icon" : "fa fa-dropbox",
+        "sref" : "app.courier_overwrite",
+        "url" : "/blackbox"
+    },
+    "engage_panel": {
+        "text": "Engage",
+        "icon": "flaticon-home sidebar-icon",
+        "sref": "app.engageListing",
+        "url" : "/internal/sellers/engage_panel"
+    }
+}
