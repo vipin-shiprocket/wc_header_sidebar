@@ -1,4 +1,4 @@
-# WcHeaderSidebar
+# Web Component for Header and Sidebar
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.3.
 
