@@ -5,7 +5,12 @@
     <button class="rectangle-599">Recharge Wallet</button>
     <img src="../../assets/icons/Group 16001.svg">
     <img src="../../assets/icons/Group 15946.svg">
-    <img src="../../assets/icons/Group 16000.svg">
-    <img src="../../assets/icons/Group 15943.svg">
-    <img src="../../assets/icons/Group 16047.svg">
+    <img src="../../assets/icons/Group 16000.svg"> 
+    <button class="dropbtn" mat-button [matMenuTriggerFor]="menu"><img src="../../assets/icons/Group 15943.svg">
+      <span style="margin-top: 5px;">{{userData.company_name}}</span>
+      <img src="../../assets/icons/Group 16047.svg"></button>
+    <mat-menu #menu="matMenu">
+    <button mat-menu-item>{{userData.first_name}}</button>
+    <button mat-menu-item>{{userData.mobile}}</button>
+    </mat-menu>
 </mat-toolbar>

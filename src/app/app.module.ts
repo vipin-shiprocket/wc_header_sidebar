@@ -14,10 +14,14 @@ import { OptDialogComponent } from './opt-dialog/opt-dialog.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { HeaderComponent } from './header/header.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import { HomeComponent } from './home/home.component';
+import {MatMenuModule} from '@angular/material/menu';
 
 const appRoutes: Routes = [
   { path: '', component:SidebarComponent},
-  { path: 'head', component:HeaderComponent}
+  { path: 'head', component:HeaderComponent},
+  { path: 'home', component:HomeComponent}
+
 ];
 
 @NgModule({
@@ -25,11 +29,13 @@ const appRoutes: Routes = [
     AppComponent,
     SidebarComponent,
     OptDialogComponent,
-    HeaderComponent
+    HeaderComponent,
+    HomeComponent
   ],
   exports: [MatSidenavModule],
   imports: [
     BrowserModule,
+    MatMenuModule,
     BrowserAnimationsModule,
     MatSidenavModule,
     MatIconModule,

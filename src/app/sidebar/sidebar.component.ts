@@ -11,7 +11,7 @@ import * as sidebarMenu from '../../sidebar-menu.json';
   styleUrls: ['./sidebar.component.scss']
 })
 export class SidebarComponent implements OnInit {
-  sidenavWidth = 5;
+  sidenavWidth = 6.5;
   inputEntered:any;
   showMenu=false;
   finalData = [];
@@ -81,7 +81,7 @@ export class SidebarComponent implements OnInit {
 		this.sidenavWidth = 15;
 	}
 	decrease() {
-		this.sidenavWidth = 5;
+		this.sidenavWidth = 6.5;
 	}
 
   openDialog(): void {
