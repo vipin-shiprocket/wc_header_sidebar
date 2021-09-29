@@ -1,37 +1,38 @@
-import { NgModule } from '@angular/core';
+import { DoBootstrap, Injector, NgModule, NgZone } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { MatSidenavModule } from '@angular/material/sidenav';
-import {MatIconModule} from '@angular/material/icon';
-import {MatListModule} from '@angular/material/list';
-import { AppComponent } from './app.component';
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
+// import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SidebarComponent } from './sidebar/sidebar.component';
-import { Routes } from '@angular/router';
-import { RouterModule } from '@angular/router';
+// import { Routes } from '@angular/router';
+// import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { OptDialogComponent } from './opt-dialog/opt-dialog.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { HeaderComponent } from './header/header.component';
-import {MatToolbarModule} from '@angular/material/toolbar';
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { HomeComponent } from './home/home.component';
-import {MatMenuModule} from '@angular/material/menu';
-import {MatInputModule} from '@angular/material/input';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatInputModule } from '@angular/material/input';
+import { createCustomElement } from '@angular/elements';
 
-const appRoutes: Routes = [
-  { path: '', component:SidebarComponent},
-  { path: 'head', component:HeaderComponent},
-  { path: 'home', component:HomeComponent}
+// const appRoutes: Routes = [
+//   { path: '', component:SidebarComponent},
+//   { path: 'head', component:HeaderComponent},
+//   { path: 'home', component:HomeComponent}
 
-];
+// ];
 
 @NgModule({
   declarations: [
-    AppComponent,
+    // AppComponent,
     SidebarComponent,
     OptDialogComponent,
     HeaderComponent,
-    HomeComponent
+    HomeComponent,
   ],
   exports: [MatSidenavModule],
   imports: [
@@ -43,13 +44,26 @@ const appRoutes: Routes = [
     MatIconModule,
     MatListModule,
     MatToolbarModule,
-    RouterModule,
+    // RouterModule,
     HttpClientModule,
     FormsModule,
     MatDialogModule,
-    RouterModule.forRoot(appRoutes)
+    // RouterModule.forRoot(appRoutes)
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  // bootstrap: [AppComponent]
+  entryComponents: [HomeComponent],
 })
-export class AppModule { }
+export class AppModule implements DoBootstrap {
+  constructor(private injector: Injector, private ngZone: NgZone) {
+    (window as any).ngZone = this.ngZone;
+  }
+
+  ngDoBootstrap() {
+    const el = createCustomElement(HomeComponent, {
+      injector: this.injector,
+    });
+
+    customElements.define('header-sidebar-comp', el);
+  }
+}
