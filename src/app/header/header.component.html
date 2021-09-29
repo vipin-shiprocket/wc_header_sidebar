@@ -1,14 +1,16 @@
 <mat-toolbar>
     <span class="example-spacer"></span>
-    <img class="example-icon favorite-icon" src="../../assets/icons/Group 15948.svg">
+    <mat-icon class="header-icon" mat-list-icon>work</mat-icon>
     <span>₹2000</span>
     <button class="rectangle-599">Recharge Wallet</button>
-    <img src="../../assets/icons/Group 16001.svg">
-    <img src="../../assets/icons/Group 15946.svg">
-    <img src="../../assets/icons/Group 16000.svg"> 
-    <button class="dropbtn" mat-button [matMenuTriggerFor]="menu"><img src="../../assets/icons/Group 15943.svg">
+    <mat-icon class="header-icon" mat-list-icon>phone</mat-icon>
+    <mat-icon class="header-icon" mat-list-icon>notifications</mat-icon>
+    <mat-icon class="header-icon" mat-list-icon>apps</mat-icon>
+    <button class="dropbtn" mat-button [matMenuTriggerFor]="menu">
+      <mat-icon class="header-icon" mat-list-icon>person</mat-icon>
       <span style="margin-top: 5px;">{{userData.company_name}}</span>
-      <img src="../../assets/icons/Group 16047.svg"></button>
+      <mat-icon class="header-icon" mat-list-icon>expand_more</mat-icon>
+    </button>
     <mat-menu #menu="matMenu">
     <button mat-menu-item>{{userData.first_name}}</button>
     <button mat-menu-item>{{userData.mobile}}</button>

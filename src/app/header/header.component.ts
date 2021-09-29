@@ -15,7 +15,7 @@ export class HeaderComponent implements OnInit {
   }
 
   getUserData(){
-    this.http.get<any>('https://qa-api-1.kartrocket.com/v1/auth/login/user?is_web=1&token='+localStorage.satellizer_token,
+    this.http.get<any>('http://apiv2.shiprocket.local/v1/auth/login/user?is_web=1&token='+localStorage.satellizer_token,
     { headers:this.getHeaders()}).subscribe(response => {
         this.userData = response;
    });

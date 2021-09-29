@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-home',
@@ -6,11 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  token:any='';
+  @Input() token:any;
+  @Input() url:any;
   isToken:boolean=false;
   constructor() { }
 
   ngOnInit(): void {
+    localStorage.setItem('satellizer_token',this.token);
     if(localStorage.getItem('satellizer_token')){
       this.isToken=true;
     }

@@ -11,7 +11,7 @@ import * as sidebarMenu from '../../sidebar-menu.json';
   styleUrls: ['./sidebar.component.scss']
 })
 export class SidebarComponent implements OnInit {
-  sidenavWidth = 6.5;
+  sidenavWidth = 4.5;
   inputEntered:any;
   showMenu=false;
   finalData = [];
@@ -36,17 +36,12 @@ export class SidebarComponent implements OnInit {
 
 
   getMenuOptions(){
-   if(localStorage.getItem('satellizer_token')){
-    this.http.get<any>('https://qa-api-1.kartrocket.com/v1/settings/menu?is_web=1',
+    this.http.get<any>('http://apiv2.shiprocket.local/v1/settings/menu?v=1653&is_web=1',
     { headers:this.getHeaders()}).subscribe(response => {
      if(response.data){
        this.showMenu=true;
      }
    });
-   }
-   else{
-        this.openDialog();
-   }
   }
 
 
@@ -60,6 +55,7 @@ export class SidebarComponent implements OnInit {
     });
     return headers;
   }
+
   submitOtp(enteredOtp:any){
     const credentials = {
       email:'zaid.haider@shiprocket.in',
@@ -81,18 +77,18 @@ export class SidebarComponent implements OnInit {
 		this.sidenavWidth = 15;
 	}
 	decrease() {
-		this.sidenavWidth = 6.5;
+		this.sidenavWidth = 4.5;
 	}
 
-  openDialog(): void {
-    const dialogRef = this.dialog.open(OptDialogComponent, {
-      width: '250px',
-      data: ''
-    });
+  // openDialog(): void {
+  //   const dialogRef = this.dialog.open(OptDialogComponent, {
+  //     width: '250px',
+  //     data: ''
+  //   });
 
-    dialogRef.afterClosed().subscribe(result => {
-      localStorage.setItem('satellizer_token',result);
-      this.getMenuOptions();
-    });
-  }
+  //   dialogRef.afterClosed().subscribe(result => {
+  //     localStorage.setItem('satellizer_token',result);
+  //     this.getMenuOptions();
+  //   });
+  // }
 }
