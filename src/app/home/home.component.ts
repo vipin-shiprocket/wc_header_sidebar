@@ -1,26 +1,19 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnInit } from '@angular/core';
+import { CommonService } from '../shared/common.service';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  styleUrls: ['./home.component.scss'],
 })
-export class HomeComponent implements OnInit {
-  @Input() token:any;
-  @Input() url:any;
-  isToken:boolean=false;
-  constructor() { }
+export class HomeComponent implements OnInit, OnChanges {
+  @Input() details: { token: string; url: string } = { token: '', url: '' };
 
-  ngOnInit(): void {
-    localStorage.setItem('satellizer_token',this.token);
-    if(localStorage.getItem('satellizer_token')){
-      this.isToken=true;
-    }
-  }
+  constructor(private common: CommonService) {}
 
+  ngOnInit(): void {}
 
-  addToken(){
-    localStorage.setItem('satellizer_token',this.token);
-    this.isToken = true;
+  ngOnChanges(): void {
+    this.common.details.next(this.details);
   }
 }
