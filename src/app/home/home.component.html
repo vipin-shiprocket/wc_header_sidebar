@@ -1,2 +1,9 @@
-<app-header></app-header>
-<app-sidebar></app-sidebar>
+<div class="token-div" *ngIf="!isToken">
+    <p>Please Enter the Token!</p>
+    <input type="text" [(ngModel)]="token">
+    <br>
+    <button class="btn-submit" (click)="addToken()">Submit</button>
+</div>
+
+<app-header *ngIf="isToken"></app-header>
+<app-sidebar *ngIf="isToken"></app-sidebar>

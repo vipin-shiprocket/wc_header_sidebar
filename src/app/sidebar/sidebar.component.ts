@@ -18,7 +18,7 @@ export class SidebarComponent implements OnInit {
   constructor(private http:HttpClient,private dialog: MatDialog,) { }
 
   ngOnInit(): void {
-    this.login();
+    this.getMenuOptions();
   }
 
   login(){

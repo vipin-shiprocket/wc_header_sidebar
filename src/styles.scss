@@ -2,3 +2,62 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+.mat-toolbar{
+    background-color: white;
+}
+
+.example-spacer {
+    flex: 1 1 auto;
+  }
+
+.rectangle-599 {
+    outline: none;
+    border: none;
+    margin: 0 16px 0 8px;
+    padding: 10px 12px 10px 16px;
+    border-radius: 8px;
+    background-color: #f9f8fe;
+    color: #6149cd;
+}
+img{
+    margin: 0 5px;
+}
+
+.dropbtn {
+    display: flex;
+    background-color: transparent;
+    color:darkgray;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+  }
+  
+.token-div{
+    text-align: center;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    padding-top: 15%;
+}
+
+.btn-submit{
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    padding: 10px;
+    background-color: #745be7;
+    margin: 2%;
+    width: 10%;
+}
+input[type=text], select {
+    width: 90%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }

@@ -16,6 +16,7 @@ import { HeaderComponent } from './header/header.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { HomeComponent } from './home/home.component';
 import {MatMenuModule} from '@angular/material/menu';
+import {MatInputModule} from '@angular/material/input';
 
 const appRoutes: Routes = [
   { path: '', component:SidebarComponent},
@@ -36,6 +37,7 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     MatMenuModule,
+    MatInputModule,
     BrowserAnimationsModule,
     MatSidenavModule,
     MatIconModule,
