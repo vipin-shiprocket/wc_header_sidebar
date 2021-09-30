@@ -1,2 +1,2 @@
-<app-header *ngIf="token" ></app-header>
+<app-header *ngIf="token" (recharge)="onClickRecharge($event)"></app-header>
 <app-sidebar *ngIf="token"></app-sidebar>

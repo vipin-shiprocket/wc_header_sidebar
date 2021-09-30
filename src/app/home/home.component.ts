@@ -1,4 +1,11 @@
-import { Component, Input, OnChanges, OnInit } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  OnChanges,
+  OnInit,
+  Output,
+} from '@angular/core';
 import { CommonService } from '../shared/common.service';
 
 @Component({
@@ -9,6 +16,7 @@ import { CommonService } from '../shared/common.service';
 export class HomeComponent implements OnInit, OnChanges {
   @Input() token: string = '';
   @Input() url: string = '';
+  @Output() recharge = new EventEmitter();
 
   constructor(private common: CommonService) {}
 
@@ -20,5 +28,9 @@ export class HomeComponent implements OnInit, OnChanges {
       this.common.details.next(details);
       console.log('this.details', details);
     }
+  }
+
+  onClickRecharge(evt: boolean): void {
+    this.recharge.emit(evt);
   }
 }
