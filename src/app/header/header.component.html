@@ -1,18 +1,26 @@
-<mat-toolbar>
-    <span class="example-spacer"></span>
-    <mat-icon class="header-icon" mat-list-icon>work</mat-icon>
-    <span>₹2000</span>
-    <button class="rectangle-599">Recharge Wallet</button>
-    <mat-icon class="header-icon" mat-list-icon>phone</mat-icon>
-    <mat-icon class="header-icon" mat-list-icon>notifications</mat-icon>
-    <mat-icon class="header-icon" mat-list-icon>apps</mat-icon>
-    <button class="dropbtn" mat-button [matMenuTriggerFor]="menu">
-      <mat-icon class="header-icon" mat-list-icon>person</mat-icon>
-      <span style="margin-top: 5px;">{{userData.company_name}}</span>
-      <mat-icon class="header-icon" mat-list-icon>expand_more</mat-icon>
-    </button>
-    <mat-menu #menu="matMenu">
-    <button mat-menu-item>{{userData.first_name}}</button>
-    <button mat-menu-item>{{userData.mobile}}</button>
-    </mat-menu>
+<mat-toolbar color="primary">
+  <span class="example-spacer"></span>
+  <button mat-icon-button>
+    <mat-icon>work</mat-icon>
+  </button>
+  <span class="ml-2">₹2000</span>
+  <button mat-flat-button class="ml-2" (click)="onClickRecharge()">Recharge Wallet</button>
+  <button mat-icon-button class="ml-2">
+    <mat-icon>phone</mat-icon>
+  </button>
+  <button mat-icon-button class="ml-2">
+    <mat-icon>notifications</mat-icon>
+  </button>
+  <button mat-icon-button class="ml-2">
+    <mat-icon>apps</mat-icon>
+  </button>
+  <button mat-button [matMenuTriggerFor]="menu">
+    <mat-icon>person</mat-icon>
+    {{ userData.company_name }}
+    <mat-icon>expand_more</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item>{{ userData.first_name }}</button>
+    <button mat-menu-item>{{ userData.mobile }}</button>
+  </mat-menu>
 </mat-toolbar>

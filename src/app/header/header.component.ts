@@ -1,5 +1,5 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { CommonService } from '../shared/common.service';
 
 @Component({
@@ -8,6 +8,7 @@ import { CommonService } from '../shared/common.service';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
+  @Output() recharge = new EventEmitter();
   userData: any = {};
   constructor(private http: HttpClient, private common: CommonService) {}
 
@@ -42,5 +43,9 @@ export class HeaderComponent implements OnInit {
       'No-Auth': 'True',
     });
     return headers;
+  }
+
+  onClickRecharge(): void {
+    this.recharge.emit(true);
   }
 }
