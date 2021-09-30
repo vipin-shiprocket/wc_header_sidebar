@@ -17,6 +17,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { HomeComponent } from './home/home.component';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatInputModule } from '@angular/material/input';
+import {MatButtonModule} from '@angular/material/button';
 import { createCustomElement } from '@angular/elements';
 
 // const appRoutes: Routes = [
@@ -44,6 +45,7 @@ import { createCustomElement } from '@angular/elements';
     MatIconModule,
     MatListModule,
     MatToolbarModule,
+    MatButtonModule,
     // RouterModule,
     HttpClientModule,
     FormsModule,
