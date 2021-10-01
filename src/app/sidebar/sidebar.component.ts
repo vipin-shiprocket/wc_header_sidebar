@@ -5,13 +5,15 @@ import { CommonService } from '../shared/common.service';
 // import { OptDialogComponent } from '../opt-dialog/opt-dialog.component';
 // import * as sidebarMenu from '../../sidebar-menu.json';
 
+const InitialWidth = 6.4;
+
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
   styleUrls: ['./sidebar.component.scss'],
 })
 export class SidebarComponent implements OnInit {
-  sidenavWidth = 4.5;
+  sidenavWidth = InitialWidth;
   inputEntered: any;
   showMenu = false;
   finalData = [];
@@ -98,7 +100,7 @@ export class SidebarComponent implements OnInit {
     this.sidenavWidth = 15;
   }
   decrease() {
-    this.sidenavWidth = 4.5;
+    this.sidenavWidth = InitialWidth;
   }
 
   // openDialog(): void {
