@@ -13,7 +13,7 @@
         </mat-list-item>
       </mat-nav-list>  
       <mat-nav-list *ngIf="showMenu">
-        <mat-list-item class="menu-item" >
+        <mat-list-item routerLink="/dashboard" class="menu-item" >
           <mat-icon mat-list-icon>home</mat-icon>
           <h4 mat-line *ngIf="sidenavWidth > 7">Home</h4>
         </mat-list-item>
@@ -21,7 +21,7 @@
           <mat-icon mat-list-icon>dashboard</mat-icon>
           <h4 mat-line *ngIf="sidenavWidth > 7">Dashboard</h4>
         </mat-list-item>
-        <mat-list-item class="menu-item">
+        <mat-list-item routerLink="/order-report" class="menu-item">
           <mat-icon mat-list-icon>domain</mat-icon>
           <h4 mat-line *ngIf="sidenavWidth > 7">Orders</h4>
         </mat-list-item>
