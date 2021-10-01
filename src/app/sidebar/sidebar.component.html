@@ -1,7 +1,7 @@
-<mat-drawer-container style="height: 100%;position: absolute;top: 0;left: 0;" class="example-container mat-typography" autosize>
+<mat-drawer-container style="height: 100%;position: absolute;top: 0;left: 0; min-width: 6.5rem;" class="example-container mat-typography" autosize>
     <mat-drawer 	#sidenav
           mode="side"
-          class="example-sidenav"
+          class="sidenav"
           [ngStyle]="{ 'width.rem': sidenavWidth }"
           opened="true"
           (mouseenter)="increase()"
