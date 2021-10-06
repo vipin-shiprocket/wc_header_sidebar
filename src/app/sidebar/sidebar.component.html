@@ -1,36 +1,48 @@
-<mat-drawer-container style="height: 100%;position: absolute;top: 0;left: 0; min-width: 6.5rem;" class="example-container mat-typography" autosize>
-    <mat-drawer 	#sidenav
-          mode="side"
-          class="sidenav"
-          [ngStyle]="{ 'width.rem': sidenavWidth }"
-          opened="true"
-          (mouseenter)="increase()"
-          (mouseleave)="decrease()"  #drawer mode="side" disableClose="true" opened="true">
-      <mat-nav-list>
-        <mat-list-item style="color: white;">
-         <h1 class="sr-title" *ngIf="sidenavWidth > 7">Shiprocket</h1>
-         <h1 class="sr-title" *ngIf="!(sidenavWidth > 7)">SR</h1>
-        </mat-list-item>
-      </mat-nav-list>  
-      <mat-nav-list *ngIf="showMenu">
-        <mat-list-item routerLink="/dashboard" class="menu-item" >
+<mat-drawer-container
+  style="height: 100%; position: absolute; top: 0; left: 0; min-width: 6.5rem"
+  class="example-container mat-typography"
+  autosize
+>
+  <mat-drawer
+    #sidenav
+    mode="side"
+    class="sidenav"
+    [ngStyle]="{ 'width.rem': sidenavWidth }"
+    opened="true"
+    (mouseenter)="increase()"
+    (mouseleave)="decrease()"
+    #drawer
+    mode="side"
+    disableClose="true"
+    opened="true"
+  >
+    <mat-nav-list>
+      <mat-list-item style="color: white">
+        <h1 class="sr-title" *ngIf="sidenavWidth > 7">Shiprocket</h1>
+        <h1 class="sr-title" *ngIf="!(sidenavWidth > 7)">SR</h1>
+      </mat-list-item>
+    </mat-nav-list>
+    <mat-nav-list *ngIf="showMenu">
+      <a href="/dashboard">
+        <mat-list-item class="menu-item">
           <mat-icon mat-list-icon>home</mat-icon>
           <h4 mat-line *ngIf="sidenavWidth > 7">Home</h4>
         </mat-list-item>
-        <mat-list-item class="menu-item">
-          <mat-icon mat-list-icon>dashboard</mat-icon>
-          <h4 mat-line *ngIf="sidenavWidth > 7">Dashboard</h4>
-        </mat-list-item>
-        <mat-list-item routerLink="/order-report" class="menu-item">
+      </a>
+      <mat-list-item class="menu-item">
+        <mat-icon mat-list-icon>dashboard</mat-icon>
+        <h4 mat-line *ngIf="sidenavWidth > 7">Dashboard</h4>
+      </mat-list-item>
+      <a href="/order-report"
+        ><mat-list-item class="menu-item">
           <mat-icon mat-list-icon>domain</mat-icon>
           <h4 mat-line *ngIf="sidenavWidth > 7">Orders</h4>
         </mat-list-item>
-        <mat-list-item class="menu-item">
-          <mat-icon mat-list-icon>folder_shared</mat-icon>
-          <h4 mat-line *ngIf="sidenavWidth > 7">Return</h4>
-        </mat-list-item>
-      </mat-nav-list>
-    </mat-drawer>
-  
-  </mat-drawer-container>
-
+      </a>
+      <mat-list-item class="menu-item">
+        <mat-icon mat-list-icon>folder_shared</mat-icon>
+        <h4 mat-line *ngIf="sidenavWidth > 7">Return</h4>
+      </mat-list-item>
+    </mat-nav-list>
+  </mat-drawer>
+</mat-drawer-container>
