@@ -17,6 +17,7 @@ export class HomeComponent implements OnInit, OnChanges {
   @Input() token: string = '';
   @Input() url: string = '';
   @Output() recharge = new EventEmitter();
+  @Output() goToPage = new EventEmitter();
 
   constructor(private common: CommonService) {}
 
@@ -32,5 +33,10 @@ export class HomeComponent implements OnInit, OnChanges {
 
   onClickRecharge(evt: boolean): void {
     this.recharge.emit(evt);
+  }
+
+  onClickGoToPage(evt: string): void {
+    console.log('>> go to page: ', evt);
+    this.goToPage.emit(evt);
   }
 }

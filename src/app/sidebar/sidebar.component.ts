@@ -1,11 +1,41 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+// import { NavigationStart, Router } from '@angular/router';
 import { CommonService } from '../shared/common.service';
+import { filter } from 'rxjs/operators';
 // import { MatDialog } from '@angular/material/dialog';
 // import { OptDialogComponent } from '../opt-dialog/opt-dialog.component';
 // import * as sidebarMenu from '../../sidebar-menu.json';
 
 const InitialWidth = 6.4;
+const MenuJson = {
+  dashboard: {
+    text: 'Dashboard',
+    icon: 'dashboard',
+    sref: 'app.dashboard',
+    url: 'dashboard',
+  },
+  track: {
+    text: 'Track',
+    sref: 'app.tracking',
+    icon: 'track_changes',
+    url: 'tracking',
+  },
+  process_ndr: {
+    text: 'Process NDR',
+    sref: 'app.ndrPending',
+    icon: 'domain',
+    url: 'ndr-pending',
+    isExternal: true,
+  },
+  rto: {
+    text: 'RTO',
+    sref: 'app.rtoInitiated',
+    icon: 'folder_shared',
+    url: 'rto-initiated',
+    isExternal: true,
+  },
+};
 
 @Component({
   selector: 'app-sidebar',
@@ -13,10 +43,14 @@ const InitialWidth = 6.4;
   styleUrls: ['./sidebar.component.scss'],
 })
 export class SidebarComponent implements OnInit {
+  @Output() goToPage = new EventEmitter<string>();
   sidenavWidth = InitialWidth;
   inputEntered: any;
   showMenu = false;
   finalData = [];
+  sidemenu: Record<string, any> = {};
+  sidemenuKeys: string[] = [];
+  objectvalues = Object.values;
   constructor(private http: HttpClient, private common: CommonService) {}
 
   ngOnInit(): void {
@@ -32,6 +66,14 @@ export class SidebarComponent implements OnInit {
         console.error('onErr: ', onErr);
       }
     );
+  }
+
+  onClickNav(evt: Event, menuKey: string) {
+    const { url, isExternal } = this.sidemenu[menuKey] || {};
+    if (!isExternal) {
+      evt.preventDefault();
+      this.goToPage.emit(url);
+    }
   }
 
   login() {
@@ -59,6 +101,8 @@ export class SidebarComponent implements OnInit {
     this.http.get<any>(url, { headers }).subscribe((response) => {
       if (response.data) {
         this.showMenu = true;
+        this.sidemenu = MenuJson;
+        this.sidemenuKeys = Object.keys(this.sidemenu);
       }
     });
   }

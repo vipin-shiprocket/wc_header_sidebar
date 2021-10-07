@@ -23,26 +23,14 @@
       </mat-list-item>
     </mat-nav-list>
     <mat-nav-list *ngIf="showMenu">
-      <a href="/dashboard">
-        <mat-list-item class="menu-item">
-          <mat-icon mat-list-icon>home</mat-icon>
-          <h4 mat-line *ngIf="sidenavWidth > 7">Home</h4>
-        </mat-list-item>
-      </a>
-      <mat-list-item class="menu-item">
-        <mat-icon mat-list-icon>dashboard</mat-icon>
-        <h4 mat-line *ngIf="sidenavWidth > 7">Dashboard</h4>
-      </mat-list-item>
-      <a href="/order-report"
-        ><mat-list-item class="menu-item">
-          <mat-icon mat-list-icon>domain</mat-icon>
-          <h4 mat-line *ngIf="sidenavWidth > 7">Orders</h4>
-        </mat-list-item>
-      </a>
-      <mat-list-item class="menu-item">
-        <mat-icon mat-list-icon>folder_shared</mat-icon>
-        <h4 mat-line *ngIf="sidenavWidth > 7">Return</h4>
-      </mat-list-item>
+      <ng-container *ngFor="let key of sidemenuKeys">
+        <a [href]="sidemenu[key]?.url" (click)="onClickNav($event, key)">
+          <mat-list-item class="menu-item">
+            <mat-icon mat-list-icon>{{ sidemenu[key]?.icon }}</mat-icon>
+            <h4 mat-line *ngIf="sidenavWidth > 7">{{ sidemenu[key]?.text }}</h4>
+          </mat-list-item>
+        </a>
+      </ng-container>
     </mat-nav-list>
   </mat-drawer>
 </mat-drawer-container>

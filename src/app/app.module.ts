@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
-// import { AppComponent } from './app.component';
+// import { AppComponent } from './app.component'; // comment this
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SidebarComponent } from './sidebar/sidebar.component';
 // import { Routes } from '@angular/router';
@@ -29,7 +29,7 @@ import { createCustomElement } from '@angular/elements';
 
 @NgModule({
   declarations: [
-    // AppComponent,
+    // AppComponent,  // comment this line
     SidebarComponent,
     OptDialogComponent,
     HeaderComponent,
@@ -50,10 +50,10 @@ import { createCustomElement } from '@angular/elements';
     HttpClientModule,
     FormsModule,
     MatDialogModule,
-    // RouterModule.forRoot(appRoutes)
+    // RouterModule.forRoot([])
   ],
   providers: [],
-  // bootstrap: [AppComponent]
+  // bootstrap: [AppComponent]  // comment this line
   entryComponents: [HomeComponent],
 })
 export class AppModule implements DoBootstrap {
