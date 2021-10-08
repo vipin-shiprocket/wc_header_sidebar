@@ -5,9 +5,15 @@ $color1: #6964e2;
 //   overflow: hidden;
 // }
 
+
+
 ::ng-deep .sidenav {
   background-color: $background !important;
   padding: 0 2% 2% 1%;
+  ::-webkit-scrollbar {
+    width: 0;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
+  }
 
   .mat-list-item-content {
     padding: 0 12px 0 12px !important;

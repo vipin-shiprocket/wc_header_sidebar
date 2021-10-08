@@ -2,12 +2,13 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 // import { NavigationStart, Router } from '@angular/router';
 import { CommonService } from '../shared/common.service';
-import { filter } from 'rxjs/operators';
+import * as sidebarMenu from './sidebar-menu.json';
+// import { filter } from 'rxjs/operators';
 // import { MatDialog } from '@angular/material/dialog';
 // import { OptDialogComponent } from '../opt-dialog/opt-dialog.component';
 // import * as sidebarMenu from '../../sidebar-menu.json';
 
-const InitialWidth = 6.4;
+const InitialWidth = 15;
 const MenuJson = {
   dashboard: {
     text: 'Dashboard',
@@ -47,14 +48,13 @@ export class SidebarComponent implements OnInit {
   sidenavWidth = InitialWidth;
   inputEntered: any;
   showMenu = false;
-  finalData = [];
+  finalData: any[] = [];
   sidemenu: Record<string, any> = {};
   sidemenuKeys: string[] = [];
   objectvalues = Object.values;
   constructor(private http: HttpClient, private common: CommonService) {}
 
   ngOnInit(): void {
-    // this.getMenuOptions();
     this.common.details.subscribe(
       (onSuccess: any) => {
         const { token, url } = onSuccess;
@@ -68,47 +68,66 @@ export class SidebarComponent implements OnInit {
     );
   }
 
-  onClickNav(evt: Event, menuKey: string) {
-    const { url, isExternal } = this.sidemenu[menuKey] || {};
-    if (!isExternal) {
-      evt.preventDefault();
+  onClickNav(evt: Event, url: string) {
+    evt.preventDefault();
+    // const { url } = this.sidemenu[menuKey] || {};
+
+    console.log(url);
+    
+    if (!url) {
       this.goToPage.emit(url);
     }
   }
 
-  login() {
-    const credentials = {
-      email: 'zaid.haider@shiprocket.in',
-      password: 'shiviSH12@',
-      device_id: '0b20495674384e66de255fa9fc677cde',
-    };
-    this.http
-      .post<any>('https://qa-api-1.kartrocket.com/v1/auth/login', credentials)
-      .subscribe(
-        (res) => {
-          // this.getMenuOptions();
-        },
-        (err) => {
-          console.log(err);
-        }
-      );
-  }
-
   getMenuOptions(token: string, baseUrl: string) {
-    const url = `${baseUrl}/v1/settings/menu?v=1653&is_web=1`;
+    let url = `${baseUrl}/v1/settings/menu?is_web=1`;
+    // const url = `${baseUrl}/v1/settings/menu?v=1653&is_web=1`;
     const headers = this.getHeaders(token);
 
     this.http.get<any>(url, { headers }).subscribe((response) => {
-      if (response.data) {
-        this.showMenu = true;
-        this.sidemenu = MenuJson;
-        this.sidemenuKeys = Object.keys(this.sidemenu);
+      let apimenu: any = sidebarMenu;
+      let apimenuKey = Object.keys(apimenu);
+      let jsondata = response['data'];
+      this.showMenu = true;
+      for (let data in jsondata) {
+
+        if (apimenuKey.indexOf(data) !== -1) {
+          if (jsondata[data] !== true) {
+            let menuData: any = {};
+            let submenuData: any = [];
+            menuData['text'] = apimenu[data].text;
+            menuData['icon'] = apimenu[data].icon;
+            menuData['url'] = apimenu[data].url;
+            let submenuKeys = Object.keys(jsondata[data]);
+            let submenuKeysValue = {};
+            for (let i = 0; i < submenuKeys.length; i++) {
+              const subMenuKey = submenuKeys[i];
+
+              if (jsondata[data][subMenuKey] && apimenu[data]?.submenu) {
+                submenuKeysValue = apimenu[data]?.submenu[subMenuKey];
+                submenuData.push(submenuKeysValue);
+              }
+            }
+            if (submenuData.length > 0) {
+              menuData['submenu'] = submenuData;
+            }
+            this.finalData.push(menuData);
+          } else {
+            if (!Array.isArray(jsondata[data])) {
+              let singleMenuData: any = {};
+              singleMenuData['text'] = apimenu[data].text;
+              singleMenuData['icon'] = apimenu[data].icon;
+              singleMenuData['url'] = apimenu[data].url;
+              this.finalData.push(apimenu[data]);
+            }
+          }
+        }
       }
+
     });
   }
 
   getHeaders(token: string): HttpHeaders {
-    // const token = localStorage.getItem('satellizer_token');
     let headers = new HttpHeaders({
       Authorization: 'Bearer ' + token,
       'Content-Type': 'application/json',
@@ -118,44 +137,10 @@ export class SidebarComponent implements OnInit {
     return headers;
   }
 
-  submitOtp(enteredOtp: any) {
-    const credentials = {
-      email: 'zaid.haider@shiprocket.in',
-      password: 'shiviSH12@',
-      device_id: '0b20495674384e66de255fa9fc677cde',
-      otp: enteredOtp,
-    };
-    this.http
-      .post<any>('https://qa-api-1.kartrocket.com/v1/auth/login', credentials)
-      .subscribe(
-        (res) => {
-          localStorage.setItem('satellizer_token', res.token);
-          if (localStorage.getItem('satellizer_token')) {
-            this.showMenu = true;
-          }
-        },
-        (err) => {
-          console.log(err);
-        }
-      );
-  }
-
   increase() {
     this.sidenavWidth = 15;
   }
   decrease() {
     this.sidenavWidth = InitialWidth;
   }
-
-  // openDialog(): void {
-  //   const dialogRef = this.dialog.open(OptDialogComponent, {
-  //     width: '250px',
-  //     data: ''
-  //   });
-
-  //   dialogRef.afterClosed().subscribe(result => {
-  //     localStorage.setItem('satellizer_token',result);
-  //     this.getMenuOptions();
-  //   });
-  // }
 }

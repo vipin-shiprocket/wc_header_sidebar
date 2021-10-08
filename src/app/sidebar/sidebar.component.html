@@ -9,8 +9,6 @@
     class="sidenav"
     [ngStyle]="{ 'width.rem': sidenavWidth }"
     opened="true"
-    (mouseenter)="increase()"
-    (mouseleave)="decrease()"
     #drawer
     mode="side"
     disableClose="true"
@@ -23,13 +21,37 @@
       </mat-list-item>
     </mat-nav-list>
     <mat-nav-list *ngIf="showMenu">
-      <ng-container *ngFor="let key of sidemenuKeys">
+      <!-- <ng-container *ngFor="let key of sidemenuKeys">
         <a [href]="sidemenu[key]?.url" (click)="onClickNav($event, key)">
           <mat-list-item class="menu-item">
             <mat-icon mat-list-icon>{{ sidemenu[key]?.icon }}</mat-icon>
             <h4 mat-line *ngIf="sidenavWidth > 7">{{ sidemenu[key]?.text }}</h4>
           </mat-list-item>
         </a>
+      </ng-container> -->
+      <ng-container *ngFor="let menu of finalData">
+        <a [href]="menu.url" style="color: white" (click)="onClickNav($event, menu?.url)">
+          <mat-list-item class="menu-item">
+            <!-- <mat-icon mat-list-icon>{{ sidemenu[key]?.icon }}</mat-icon> -->
+            <h4 mat-line *ngIf="sidenavWidth > 7">{{ menu?.text }}</h4>
+            <span style="display: flex;" *ngIf="menu?.submenu && menu?.submenu.length">
+              <span style="display: flex;"></span>
+              <mat-icon>
+                expand_more
+              </mat-icon>
+            </span>
+          </mat-list-item>
+        </a>
+
+        <div *ngFor="let sub of menu?.submenu">
+          <a *ngIf="sub" [href]="sub?.url" style="color: white" (click)="onClickNav($event, sub?.url)">
+            <mat-list-item class="menu-item">
+              <!-- <mat-icon mat-list-icon>{{ sidemenu[key]?.icon }}</mat-icon> -->
+              <h4 mat-line *ngIf="sidenavWidth > 7">{{ sub?.text }}</h4>
+            </mat-list-item>
+          </a>
+        </div>
+        
       </ng-container>
     </mat-nav-list>
   </mat-drawer>
