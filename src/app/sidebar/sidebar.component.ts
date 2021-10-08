@@ -69,12 +69,11 @@ export class SidebarComponent implements OnInit {
   }
 
   onClickNav(evt: Event, url: string) {
-    evt.preventDefault();
     // const { url } = this.sidemenu[menuKey] || {};
-
     console.log(url);
     
     if (!url) {
+      evt.preventDefault();
       this.goToPage.emit(url);
     }
   }
